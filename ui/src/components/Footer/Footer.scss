@@ -1,0 +1,33 @@
+.footer {
+  background-color: #212121;
+  display: flex;
+  justify-content: center;
+  padding: 80px 30px;
+  .footerContainer {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    .footerSection {
+      color: white;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .arrow {
+        display: block;
+        width: 100px;
+        height: 1px;
+        background-color: yellow;
+        margin: 0 0 15px 0;
+      }
+      h3 {
+        font-size: 28px;
+        text-transform: uppercase;
+      }
+      span {
+        font-size: 18px;
+        color: #a6a6a6;
+        max-width: 200px;
+      }
+    }
+  }
+}

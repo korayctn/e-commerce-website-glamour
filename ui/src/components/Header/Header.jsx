@@ -3,14 +3,15 @@ import "./Header.scss";
 import { AiOutlineSearch, AiFillHeart } from "react-icons/ai";
 import { BsFillPersonFill } from "react-icons/bs";
 import { FiShoppingCart } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
     <div className="header">
       <div className="firstContainer">
-        <a href="#" className="logo">
+        <Link to="/" className="logo">
           glamour
-        </a>
+        </Link>
         <div className="search">
           <div className="searchInputContainer">
             <label>
@@ -23,32 +24,36 @@ export const Header = () => {
           </div>
 
           <div className="searchIconContainer">
-            <a href="#">
+            <Link to="/">
               <AiOutlineSearch className="searchIcon" />
-            </a>
+            </Link>
           </div>
         </div>
         <div className="icons">
-          <a href="" id="profileIcon">
+          <Link to="/profile" id="profileIcon">
             <BsFillPersonFill className="icon" />
             <div id="avatarLogin">
-              <button>Login</button>
-              <button>SignUp</button>
+              <Link to="/login">
+                <button>Login</button>
+              </Link>
+              <Link to="/signup">
+                <button>SignUp</button>
+              </Link>
             </div>
-          </a>
-          <a href="">
+          </Link>
+          <Link to="/wishlist">
             <AiFillHeart className="icon" />
-          </a>
-          <a href="">
+          </Link>
+          <Link to="/card">
             <FiShoppingCart className="icon" />
-          </a>
+          </Link>
         </div>
       </div>
       <div className="linksContainer">
-        <a href="#">Homepage</a>
-        <a href="#">Jewelry</a>
-        <a href="#">Parfume</a>
-        <a href="#">HOT OFFERS</a>
+        <Link to="/">Homepage</Link>
+        <Link to="/cat=jewelry">Jewelry</Link>
+        <Link to="/cat=parfume">Parfume</Link>
+        <Link to="/cat=hotoffers">HOT OFFERS</Link>
       </div>
     </div>
   );
