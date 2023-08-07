@@ -1,0 +1,35 @@
+.itemCard {
+  box-shadow: 0px 9px 21px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px 40px;
+  border-radius: 8px;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  position: relative;
+  .discountContainer {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  .itemTextContainer {
+    .priceContainer {
+      display: flex;
+      justify-content: space-between;
+    }
+    .firstPrice {
+      font-size: 20px;
+    }
+    h3 {
+      font-size: 32px;
+    }
+    h4 {
+      font-size: 24px;
+    }
+  }
+  img {
+    max-width: 250px;
+    max-height: 250px;
+  }
+}

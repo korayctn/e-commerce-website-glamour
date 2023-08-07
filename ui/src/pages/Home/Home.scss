@@ -7,9 +7,7 @@
     justify-content: center;
     display: flex;
     position: relative;
-    .heroImg {
-      border-radius: 15px;
-    }
+
     .heroSectionTextContainer {
       position: absolute;
       top: 40%;
@@ -46,6 +44,31 @@
     .heroImg {
       width: 1500px;
       height: 800px;
+      border-radius: 13px;
     }
+  }
+}
+
+.trustedBy {
+  display: flex;
+  justify-content: center;
+  .trustedByContainer {
+    width: 80%;
+  }
+}
+.cards {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  h3 {
+    font-size: 40px;
+  }
+  .cardsContainer {
+    width: 80%;
+    padding-top: 40px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 }
