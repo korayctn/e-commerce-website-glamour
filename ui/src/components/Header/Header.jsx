@@ -4,6 +4,8 @@ import { AiOutlineSearch, AiFillHeart } from "react-icons/ai";
 import { BsFillPersonFill } from "react-icons/bs";
 import { FiShoppingCart } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import Button from "@mui/material/Button";
+import LoginIcon from "@mui/icons-material/Login";
 
 export const Header = () => {
   return (
@@ -34,10 +36,14 @@ export const Header = () => {
             <BsFillPersonFill className="icon" />
             <div id="avatarLogin">
               <Link to="/login">
-                <button>Login</button>
+                <Button fullWidth variant="contained" endIcon={<LoginIcon />}>
+                  Login
+                </Button>
               </Link>
-              <Link to="/signup">
-                <button>SignUp</button>
+              <Link to="/register">
+                <Button fullWidth variant="contained" endIcon={<LoginIcon />}>
+                  Register
+                </Button>
               </Link>
             </div>
           </Link>
@@ -51,8 +57,8 @@ export const Header = () => {
       </div>
       <div className="linksContainer">
         <Link to="/">Homepage</Link>
-        <Link to="/cat=jewelry">Jewelry</Link>
-        <Link to="/cat=parfume">Parfume</Link>
+        <Link to="/products/cat=jewelry">Jewelry</Link>
+        <Link to="/products/cat=bags">Parfume</Link>
         <Link to="/cat=hotoffers">HOT OFFERS</Link>
       </div>
     </div>
