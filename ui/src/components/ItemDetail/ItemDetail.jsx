@@ -30,8 +30,9 @@ export const ItemDetail = ({
               value={4.6}
               readOnly
             />
+            <span className="ratingText">{rating}</span>
           </div>
-
+          <h3>{description}</h3>
           <h4>{price}$</h4>
         </div>
       </div>
