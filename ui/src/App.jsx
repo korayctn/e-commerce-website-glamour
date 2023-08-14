@@ -13,11 +13,7 @@ import { Detail } from "./pages/Detail/Detail";
 
 function App() {
   const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(true);
-    }, 1000);
-  }, []);
+
   const Layout = () => {
     if (loading) {
       return (

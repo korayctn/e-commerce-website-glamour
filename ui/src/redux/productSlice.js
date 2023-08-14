@@ -13,7 +13,7 @@ export const getJewelryProducts = createAsyncThunk("getproducts", async () => {
     "https://dummyjson.com/products/category/womens-jewellery"
   );
 
-  return data.products.slice(0, 3);
+  return data.products;
 });
 export const getOneProduct = createAsyncThunk("getOneProduct", async (id) => {
   const { data } = await axios.get(`https://dummyjson.com/products/${id}`);

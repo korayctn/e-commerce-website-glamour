@@ -3,6 +3,7 @@ import { Header } from "../../components/Header/Header";
 import "./Home.scss";
 import heroImg from "../../../public/img/hero.jpg";
 import heroImg2 from "../../../public/img/hero2.jpg";
+import heroImg3 from "../../../public/img/hero3.jpg";
 import data from "../../../public/data";
 import { ItemCard } from "../../components/ItemCard/ItemCard.jsx";
 import { Loading } from "../../components/Loading/Loading";
@@ -11,22 +12,20 @@ import { getJewelryProducts, getOneProduct } from "../../redux/productSlice";
 
 export const Home = () => {
   const [loading, setloading] = useState(true);
-
+  const heroImageArr = [heroImg, heroImg2, heroImg3];
+  console.log(heroImageArr);
   const dispatch = useDispatch();
   const { products, productsStatus } = useSelector((state) => state.products);
-
   useEffect(() => {
-    setloading(false);
-    dispatch(getOneProduct(31));
     dispatch(getJewelryProducts());
   }, [dispatch]);
+
   console.log(products);
-  setInterval(() => {}, 10000);
   return (
     <>
       <div className="heroSection">
         <div className="heroSectionContainer">
-          <img src={heroImg} alt="heroimg" className="heroImg" />
+          <img src={heroImageArr[0]} alt="heroimg" className="heroImg" />
           <div className="heroSectionTextContainer">
             <h2>Center of beauty</h2>
             <button>Shop Now</button>
@@ -64,7 +63,7 @@ export const Home = () => {
           {productsStatus == "LOADING" ? (
             <Loading />
           ) : (
-            products?.map((item, index) => {
+            products?.slice(0, 3).map((item, index) => {
               return (
                 <ItemCard
                   key={index}
