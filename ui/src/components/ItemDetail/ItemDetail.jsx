@@ -6,6 +6,8 @@ import Snackbar from "@mui/material/Snackbar";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import Button from "@mui/material/Button";
+import { useDispatch } from "react-redux";
+import { addToCart, clearCart, removeFromCart } from "../../redux/cartSlice";
 
 export const ItemDetail = ({
   category,
@@ -16,11 +18,15 @@ export const ItemDetail = ({
   images,
   brand,
   thumbnail,
+  id,
 }) => {
+  const [quantity, setQuantity] = useState(0);
+  const dispatch = useDispatch();
   const [open, setOpen] = React.useState(false);
 
   const handleClickSnack = () => {
-    number > 0 && setOpen(true);
+    quantity > 0 && setOpen(true);
+    dispatch(addToCart({ id, brand, title, price, thumbnail, quantity }));
   };
 
   const handleCloseSnack = (event, reason) => {
@@ -30,6 +36,8 @@ export const ItemDetail = ({
 
     setOpen(false);
   };
+
+  const addthebasket = () => {};
   const action = (
     <React.Fragment>
       <Button color="secondary" size="small" onClick={handleCloseSnack}>
@@ -46,17 +54,16 @@ export const ItemDetail = ({
     </React.Fragment>
   );
 
-  const [number, setNumber] = useState(0);
   const [thumb, setThumb] = useState();
   const [clicked, setClicked] = useState(false);
   const handleClick = (e) => {
     setThumb(e.target.src);
   };
   const dec = () => {
-    if (number > 0) setNumber(number - 1);
+    if (quantity > 0) setQuantity(quantity - 1);
   };
   const inc = () => {
-    setNumber(number + 1);
+    setQuantity(quantity + 1);
   };
   return (
     <>
@@ -98,7 +105,7 @@ export const ItemDetail = ({
               <button onClick={dec} className="numberChanger">
                 -
               </button>
-              <span className="number">{number}</span>
+              <span className="number">{quantity}</span>
               <button onClick={inc} className="numberChanger">
                 +
               </button>

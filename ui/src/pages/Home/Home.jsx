@@ -9,6 +9,7 @@ import { ItemCard } from "../../components/ItemCard/ItemCard.jsx";
 import { Loading } from "../../components/Loading/Loading";
 import { useSelector, useDispatch } from "react-redux";
 import { getJewelryProducts, getOneProduct } from "../../redux/productSlice";
+import { HeroSlider } from "../../components/HeroSlider/HeroSlider";
 
 export const Home = () => {
   const [loading, setloading] = useState(true);
@@ -23,15 +24,8 @@ export const Home = () => {
   console.log(products);
   return (
     <>
-      <div className="heroSection">
-        <div className="heroSectionContainer">
-          <img src={heroImageArr[0]} alt="heroimg" className="heroImg" />
-          <div className="heroSectionTextContainer">
-            <h2>Center of beauty</h2>
-            <button>Shop Now</button>
-          </div>
-        </div>
-      </div>
+      <HeroSlider />
+
       <div className="trustedBy">
         <div className="trustedByContainer">
           <h4>Trusted by </h4>

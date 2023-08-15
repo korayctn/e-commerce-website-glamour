@@ -6,8 +6,11 @@ import { FiShoppingCart } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import LoginIcon from "@mui/icons-material/Login";
+import { useSelector } from "react-redux";
 
 export const Header = () => {
+  const { itemCount } = useSelector((state) => state.carts);
+  console.log(itemCount);
   return (
     <div className="header">
       <div className="firstContainer">
@@ -50,8 +53,9 @@ export const Header = () => {
           <Link to="/wishlist">
             <AiFillHeart className="icon" />
           </Link>
-          <Link to="/card">
+          <Link to="/cart">
             <FiShoppingCart className="icon" />
+            <span className="badge">{itemCount}</span>
           </Link>
         </div>
       </div>

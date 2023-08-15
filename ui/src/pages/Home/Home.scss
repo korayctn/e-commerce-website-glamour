@@ -1,58 +1,12 @@
 .heroSection {
   display: flex;
   justify-content: center;
-  .heroSectionContainer {
-    width: 80%;
-    padding: 100px 0;
-    justify-content: center;
-    display: flex;
-    position: relative;
-
-    .heroSectionTextContainer {
-      position: absolute;
-      top: 40%;
-      left: 150px;
-      h2 {
-        font-size: 52px;
-        font-weight: 300;
-        letter-spacing: 5px;
-        text-transform: uppercase;
-      }
-      button {
-        padding: 20px 30px;
-        font-size: 24px;
-        text-transform: uppercase;
-        margin-top: 15px;
-        background: rgb(255, 0, 189);
-        background: linear-gradient(
-          90deg,
-          rgba(255, 0, 189, 1) 0%,
-          rgba(244, 72, 72, 1) 100%,
-          rgba(0, 212, 255, 1) 100%
-        );
-        color: white;
-        letter-spacing: 5px;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: transform 0.3s;
-        &:hover {
-          transform: scale(1.1);
-        }
-      }
-    }
-    .heroImg {
-      width: 1500px;
-      height: 800px;
-      border-radius: 13px;
-    }
-  }
 }
 
 .trustedBy {
   display: flex;
   justify-content: center;
-  padding: 0px 0 60px 0;
+  padding: 60px 0 60px 0;
   .trustedByContainer {
     width: 80%;
     display: flex;
