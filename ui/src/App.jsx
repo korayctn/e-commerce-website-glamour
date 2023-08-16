@@ -11,6 +11,7 @@ import Register from "./pages/Register/Register.jsx";
 import Login from "./pages/Login/Login";
 import { Detail } from "./pages/Detail/Detail";
 import { ShoppingCart } from "./pages/ShoppingCart/ShoppingCart";
+import { CategoryItemsPage } from "./pages/CategoryItemPage/CategoryItemsPage";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -42,6 +43,10 @@ function App() {
           element: <Home />,
         },
         {
+          path: "/products/:cat",
+          element: <CategoryItemsPage />,
+        },
+        {
           path: "/products/:id",
           element: <Detail />,
         },
@@ -49,15 +54,15 @@ function App() {
           path: "/cart",
           element: <ShoppingCart />,
         },
+        {
+          path: "/login",
+          element: <Login />,
+        },
+        {
+          path: "/register",
+          element: <Register />,
+        },
       ],
-    },
-    {
-      path: "/login",
-      element: <Login />,
-    },
-    {
-      path: "/register",
-      element: <Register />,
     },
   ]);
   return (

@@ -34,8 +34,8 @@ export const Home = () => {
             alt="hugoboss"
           />
           <img
-            src="https://www.logo.wine//logo/Bulgari/Bulgari-Logo.wine.svg"
-            alt="bvlgari"
+            src="https://assets.stickpng.com/images/600c7f6580244200047b0051.png"
+            alt="esteeLauder"
           />
           <img
             src="https://static.vecteezy.com/system/resources/previews/019/167/092/original/gucci-free-download-free-png.png"
@@ -66,6 +66,7 @@ export const Home = () => {
                   discount={true}
                   img={item.images[0]}
                   price={item.price}
+                  brand={item.brand}
                 />
               );
             })

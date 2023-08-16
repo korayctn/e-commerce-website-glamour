@@ -8,11 +8,25 @@ import Button from "@mui/material/Button";
 import Snackbar from "@mui/material/Snackbar";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cartSlice";
 
-export const ItemCard = ({ title, discount, img, price, cat, id }) => {
+export const ItemCard = ({
+  brand,
+  title,
+  thumbnail,
+  discount,
+  img,
+  price,
+  cat,
+  id,
+}) => {
   const [open, setOpen] = React.useState(false);
-
+  const dispatch = useDispatch();
   const handleClick = () => {
+    dispatch(
+      addToCart({ id, brand, title, price, thumbnail: img, quantity: 1 })
+    );
     setOpen(true);
   };
 

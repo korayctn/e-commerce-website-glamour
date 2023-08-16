@@ -1,13 +1,14 @@
 import React from "react";
 import "./Header.scss";
 import { AiOutlineSearch, AiFillHeart } from "react-icons/ai";
-import { BsFillPersonFill } from "react-icons/bs";
-import { FiShoppingCart } from "react-icons/fi";
+
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import LoginIcon from "@mui/icons-material/Login";
 import { useSelector } from "react-redux";
-
+import Badge from "@mui/material/Badge";
+import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 export const Header = () => {
   const { itemCount } = useSelector((state) => state.carts);
   console.log(itemCount);
@@ -36,26 +37,25 @@ export const Header = () => {
         </div>
         <div className="icons">
           <Link to="/profile" id="profileIcon">
-            <BsFillPersonFill className="icon" />
+            <AccountCircleIcon className="icon" />
             <div id="avatarLogin">
               <Link to="/login">
-                <Button fullWidth variant="contained" endIcon={<LoginIcon />}>
+                <Button fullWidth variant="outlined" endIcon={<LoginIcon />}>
                   Login
                 </Button>
               </Link>
               <Link to="/register">
-                <Button fullWidth variant="contained" endIcon={<LoginIcon />}>
+                <Button fullWidth variant="outlined" endIcon={<LoginIcon />}>
                   Register
                 </Button>
               </Link>
             </div>
           </Link>
-          <Link to="/wishlist">
-            <AiFillHeart className="icon" />
-          </Link>
+
           <Link to="/cart">
-            <FiShoppingCart className="icon" />
-            <span className="badge">{itemCount}</span>
+            <Badge badgeContent={itemCount} color="primary">
+              <ShoppingBasketIcon className="icon" />
+            </Badge>
           </Link>
         </div>
       </div>
