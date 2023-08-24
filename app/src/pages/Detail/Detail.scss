@@ -1,0 +1,9 @@
+.detailContainer {
+  width: 80%;
+  margin: 0 auto;
+  padding: 150px 0 150px 0;
+  .relatedContainer {
+    display: flex;
+    gap: 20px;
+  }
+}
