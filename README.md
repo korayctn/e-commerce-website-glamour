@@ -3,7 +3,7 @@ Beauty accessories commercial website called glamour
 
 Tech Stack :
 
-React, Redux Toolkit, Axios, Sass , Material UI
+React, Redux Toolkit, Axios, Sass, Material UI
 
 # SCREENSHOTS
 
